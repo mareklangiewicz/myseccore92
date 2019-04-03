@@ -18,6 +18,7 @@ kotlin {
             }
         }
     }
+    
     androidNativeArm64("androidNative") {
         binaries {
             sharedLib {
@@ -31,6 +32,7 @@ kotlin {
     iosX64("ios") {
         compilations.main.outputKinds("framework")
     }
+    
     sourceSets {
         commonMain {
             dependencies {
@@ -41,17 +43,6 @@ kotlin {
             dependencies {
                 implementation kotlin('test-common')
                 implementation kotlin('test-annotations-common')
-            }
-        }
-        jvmMain {
-            dependencies {
-                implementation kotlin('stdlib')
-            }
-        }
-        jvmTest {
-            dependencies {
-                implementation kotlin('test')
-                implementation kotlin('test-junit')
             }
         }
         iosMain {
