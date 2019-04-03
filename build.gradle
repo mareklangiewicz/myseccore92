@@ -10,23 +10,24 @@ version '0.0.1'
 apply plugin: 'maven-publish'
 
 kotlin {
-    jvm()
-    // This is for iPhone emulator
-    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
+    
     linuxX64("linux") {
         binaries {
-            staticLib {
+            sharedLib {
                 
             }
         }
     }
     androidNativeArm64("androidNative") {
         binaries {
-            staticLib {
+            sharedLib {
 
             }
         }
     }
+    
+    // This is for iPhone emulator
+    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
     iosX64("ios") {
         compilations.main.outputKinds("framework")
     }
